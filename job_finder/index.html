@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AbilityJobs - Inclusive Job Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-universal-access"></i> AbilityJobs
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#jobs">Find Jobs</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Automatic Slideshow -->
+    <section id="home" class="hero-section">
+        <div class="slideshow-container">
+            <!-- Slide 1 -->
+            <div class="slide active">
+                <div class="slide-content">
+                    <h1>Welcome to AbilityJobs</h1>
+                    <p>Finding employment opportunities for everyone, regardless of ability.</p>
+                    <a href="#jobs" class="btn-primary">Search Jobs</a>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="slide">
+                <div class="slide-content">
+                    <h1>Voice-Enabled Job Search</h1>
+                    <p>For our visually impaired users, browse jobs hands-free with our smart voice assistant.</p>
+                    <a href="#jobs" class="btn-primary">Try Voice Search</a>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="slide">
+                <div class="slide-content">
+                    <h1>Inclusive Workplace</h1>
+                    <p>Connect with employers who value diversity and inclusion.</p>
+                    <a href="#about" class="btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Manual Navigation Dots -->
+        <div class="dots-container">
+            <span class="dot active" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+            <span class="dot" data-slide="3"></span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>AbilityJobs is dedicated to bridging the gap between talented individuals with disabilities and inclusive employers. We believe that everyone deserves equal opportunities in the workforce.</p>
+                    <p>Our platform uses smart technology to adapt to your specific needs, whether you require voice assistance, screen reader compatibility, or wheelchair-accessible job listings.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-box">
+                        <i class="fas fa-users"></i>
+                        <h3>10,000+</h3>
+                        <p>Job Seekers</p>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>5,000+</h3>
+                        <p>Jobs Posted</p>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fas fa-building"></i>
+                        <h3>1,200+</h3>
+                        <p>Partner Companies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section features-section">
+        <div class="container">
+            <h2 class="section-title">Our Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-microphone-alt"></i>
+                    <h3>Voice Assistant</h3>
+                    <p>Hands-free job search for visually impaired users with real-time voice feedback.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-universal-access"></i>
+                    <h3>Accessibility First</h3>
+                    <p>WCAG compliant design ensuring smooth experience for all users.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-filter"></i>
+                    <h3>Smart Filtering</h3>
+                    <p>Filter jobs by disability type, location, and accessibility features.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobile Friendly</h3>
+                    <p>Access job listings from any device, anywhere, anytime.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Secure & Private</h3>
+                    <p>Your data is protected with enterprise-grade security measures.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>Community Support</h3>
+                    <p>Connect with other job seekers and share experiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Search Section -->
+    <section id="jobs" class="section jobs-section">
+        <div class="container">
+            <h2 class="section-title">Find Your Dream Job</h2>
+            
+            <div class="search-panel">
+                <label for="disability-select">I am looking for a job and I am:</label>
+                <select id="disability-select">
+                    <option value="" disabled selected>Select your disability</option>
+                    <option value="blind">Blind / Visually Impaired</option>
+                    <option value="deaf">Deaf / Hearing Impaired</option>
+                    <option value="physical">Physically Disabled</option>
+                    <option value="other">Other / No Disability</option>
+                </select>
+
+                <input type="text" id="search-input" placeholder="Type job title (e.g., Developer)...">
+                <button id="search-btn">Search Jobs</button>
+                
+                <button id="voice-btn" style="display: none;">
+                    <i class="fas fa-microphone"></i> Click to Speak
+                </button>
+            </div>
+
+            <div id="job-list" class="job-list-container">
+                <p class="placeholder-text">Please select your disability above to see suitable jobs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>123 Accessibility Street, New York, NY 10001</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>support@abilityjobs.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>AbilityJobs</h4>
+                    <p>Empowering differently abled individuals to find meaningful employment.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#jobs">Jobs</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AbilityJobs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
